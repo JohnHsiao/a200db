@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="800.0" minWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      
+            <TabPane id="tab" prefHeight="800.0" prefWidth="480.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Minute">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="480.0">
+                           <children>                              
+                              <AreaChart fx:id="sc" alternativeColumnFillVisible="true" layoutY="150.0" legendVisible="false" prefHeight="610.0" prefWidth="480.0">
+	                  		      <xAxis>
+	                  		        <NumberAxis side="BOTTOM" fx:id="xAxis" />
+	                  		      </xAxis>
+	                  		      <yAxis>
+	                  		        <NumberAxis fx:id="yAxis" side="LEFT" />
+	                  		      </yAxis>
+	                  		  </AreaChart>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                
+                <Tab fx:id="tab_hour" text="Hour">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="480.0">
+                           <children>                              
+                              <AreaChart fx:id="sc_h" layoutY="150.0" legendVisible="false" prefHeight="610.0" prefWidth="480.0">
+	                  		      <xAxis>
+	                  		        <NumberAxis side="BOTTOM" fx:id="xAxis_h" />
+	                  		      </xAxis>
+	                  		      <yAxis>
+	                  		        <NumberAxis fx:id="yAxis_h" side="LEFT" />
+	                  		      </yAxis>
+	                  		  </AreaChart>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                
+                <Tab text="Day">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="480.0">
+                           <children>                              
+                              <AreaChart fx:id="sc_d" layoutX="-0.0" layoutY="150.0" legendVisible="false" prefHeight="610.0" prefWidth="480.0">
+	                  		      <xAxis>
+	                  		        <NumberAxis side="BOTTOM" fx:id="xAxis_d" />
+	                  		      </xAxis>
+	                  		      <yAxis>
+	                  		        <NumberAxis fx:id="yAxis_d" side="LEFT" />
+	                  		      </yAxis>
+	                  		  </AreaChart>
+                              
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                
+                <Tab text="Week">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="480.0">
+                           <children>                              
+                              <AreaChart fx:id="sc_w" layoutY="150.0" legendVisible="false" prefHeight="610.0" prefWidth="480.0">
+	                  		      <xAxis>
+	                  		        <NumberAxis side="BOTTOM" fx:id="xAxis_w" />
+	                  		      </xAxis>
+	                  		      <yAxis>
+	                  		        <NumberAxis fx:id="yAxis_w" side="LEFT" />
+	                  		      </yAxis>
+	                  		  </AreaChart>
+                              
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                
+                <Tab text="Month">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="480.0">
+                           <children>                              
+                              <AreaChart fx:id="sc_m" layoutY="150.0" legendVisible="false" prefHeight="610.0" prefWidth="480.0">
+	                  		      <xAxis>
+	                  		        <NumberAxis side="BOTTOM" fx:id="xAxis_m" />
+	                  		      </xAxis>
+	                  		      <yAxis>
+	                  		        <NumberAxis fx:id="yAxis_m" side="LEFT" />
+	                  		      </yAxis>
+	                  		  </AreaChart>
+                              
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                
+                
+                <Tab text="Option">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                        <Button layoutX="7.0" layoutY="659.0" mnemonicParsing="false" onAction="#close" prefHeight="36.0" prefWidth="470.0" text="Shut Down Service">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <DatePicker fx:id="begin" layoutX="7.0" layoutY="388.0" prefHeight="36.0" prefWidth="470.0" />
+                        <DatePicker fx:id="end" layoutX="7.0" layoutY="343.0" prefHeight="36.0" prefWidth="470.0" />
+                        <Button layoutX="6.0" layoutY="160.0" mnemonicParsing="false" onAction="#save24" prefHeight="36.0" prefWidth="470.0" text="Past 24 Hours">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="6.0" layoutY="206.0" mnemonicParsing="false" onAction="#saveWeek" prefHeight="36.0" prefWidth="470.0" text="Past Week">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="6.0" layoutY="252.0" mnemonicParsing="false" onAction="#saveMonth" prefHeight="36.0" prefWidth="470.0" text="Past Month">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="7.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveYear" prefHeight="36.0" prefWidth="470.0" text="Past Year">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="7.0" layoutY="432.0" mnemonicParsing="false" onAction="#saveCustom" prefHeight="36.0" prefWidth="470.0" text="Custom Range">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <DatePicker fx:id="sysdate" layoutX="9.0" layoutY="478.0" prefHeight="36.0" prefWidth="463.0" />
+                        <Button layoutX="7.0" layoutY="613.0" mnemonicParsing="false" onAction="#setime" prefHeight="36.0" prefWidth="470.0" text="Set Time">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <Slider fx:id="syshh" blockIncrement="1.0" layoutX="82.0" layoutY="533.0" majorTickUnit="1.0" max="23" minorTickCount="1" onMouseClicked="#setSyshhVal" prefHeight="14.0" prefWidth="364.0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="sysmm" blockIncrement="1.0" layoutX="79.0" layoutY="574.0" majorTickUnit="5.0" max="59" minorTickCount="1" onMouseClicked="#setSysmmVal" prefHeight="14.0" prefWidth="369.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                        <Label fx:id="syshhVal" layoutX="459.0" layoutY="517.0" text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="sysmmVal" layoutX="460.0" layoutY="559.0" text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label layoutX="10.0" layoutY="518.0" text="Hour">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="559.0" text="Minute">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+      <Group layoutY="35.0">
+         <children>
+         <Label fx:id="val" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="92.0" layoutY="47.0" prefHeight="100.0" prefWidth="388.0" styleClass="mainVal" text="0000" textAlignment="RIGHT" />
+            
+                                                          
+                  <Label fx:id="timeValue" alignment="CENTER_RIGHT" layoutX="295.0" layoutY="6.0" prefHeight="47.0" prefWidth="186.0" styleClass="timeVal" text="00:00.00">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="yearValue" layoutX="1.0" layoutY="6.0" prefHeight="47.0" prefWidth="233.0" styleClass="timeVal" text="2016" textAlignment="CENTER">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+            <Group layoutX="-8.0" layoutY="4.0">
+               <children>
+                  <Label fx:id="sps" layoutX="35.0" layoutY="43.0" prefHeight="24.0" prefWidth="100.0" styleClass="labelVal" text="1" />
+                  <Label fx:id="minValue" layoutX="35.0" layoutY="103.0" prefHeight="24.0" prefWidth="100.0" styleClass="labelVal" text="0" />
+                  <Label fx:id="maxValue" layoutX="35.0" layoutY="73.0" prefHeight="24.0" prefWidth="100.0" styleClass="labelVal" text="0" />
+                  <Label fx:id="valx" layoutX="35.0" layoutY="134.0" prefHeight="24.0" prefWidth="100.0" styleClass="labelVal" text="0" />
+                  <Label fx:id="LabSps" alignment="TOP_LEFT" layoutX="10.0" layoutY="46.0" prefWidth="30.0" styleClass="labelTag" text="Sps." />
+                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="77.0" prefWidth="30.0" styleClass="labelTag" text="Max." />
+                  <Label fx:id="LabMax" alignment="TOP_LEFT" layoutX="10.0" layoutY="107.0" prefWidth="30.0" styleClass="labelTag" text="Min." />
+                  <Label fx:id="LabVal" alignment="TOP_LEFT" layoutX="10.0" layoutY="138.0" prefWidth="30.0" styleClass="labelTag" text="Val." />
+               </children>
+            </Group>
+         </children>
+      </Group>
+   </children>
+   <cursor>
+      <Cursor fx:constant="NONE" />
+   </cursor>
+   <!-->cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor-->
+   <!-- cursor>
+      <Cursor fx:constant="NONE" />
+   </cursor-->
+</AnchorPane>
